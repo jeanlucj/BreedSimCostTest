@@ -25,6 +25,7 @@ for (package in packages_devel){
                              build_vignettes=F)
   }
 }
+library(BreedSimCost)
 
 here::i_am("analysis/BreedSimCostTest.Rmd")
 
@@ -83,15 +84,14 @@ for (burnIn in 1:bsd$nBurnInCycles){
   parents <- selectParentsBurnIn(bsd)
   bsd <- makeCrossesBurnIn(bsd, parents)
 }
-plot(gv(bsd$varietyCandidates))
+plot(AlphaSimR::gv(bsd$varietyCandidates))
 
 burnedInBSD <- bsd
 ```
 
-```{r Function to run one replication of your breeding scheme}
+```{r runWithBudget, eval=FALSE}
 # This is code from the package that you can run
 # In the package, it's in the function runWithBudget
-if (FALSE){
   startValues <- calcCurrentStatus(bsd)
   
   for (twoPart in 1:bsd$nCyclesToRun){
@@ -116,7 +116,6 @@ if (FALSE){
 
   print(startValues)
   print(endValues)
-}
 ```
 
 ### The main interface for optimizing budgets
@@ -127,9 +126,9 @@ optimizationResults <- optimizeByLOESS(bsd)
 bestAlloc <- which.max(optimizationResults$results$response)
 bsd <- burnedInBSD
 percentages <- optimizationResults$results %>% 
-  slice(bestAlloc) %>% 
+  dplyr::slice(bestAlloc) %>% 
   dplyr::select(contains("perc"))
-runWithBudget(percentages, bsd)
-plot(gv(bsd$varietyCandidates))
+bsd <- runWithBudget(percentages, bsd, returnBSD=T)
+plot(AlphaSimR::gv(bsd$varietyCandidates))
 ```
 

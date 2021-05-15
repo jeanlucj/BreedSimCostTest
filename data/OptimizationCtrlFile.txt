@@ -7,6 +7,10 @@ TRUE
 verbose
 FALSE
 
+# Save intermediate results as you go along
+saveIntermediateResults
+TRUE
+
 # Number of cores for parallel processing
 nCores
 3
@@ -38,7 +42,7 @@ batchSize
 
 # How many batches should you do before you quit
 maxNumBatches
-5
+8
 
 # When redoing simulations, how many should be high gain?
 nHighGain
@@ -46,4 +50,4 @@ nHighGain
 
 #When redoing simulations, how many should be high uncertainty?
 nUncertain
-4
+5
