@@ -12,6 +12,11 @@ if (local){
   devtools::install_local(getwd(), build_vignettes=buildVignettes)
 } else{
   # install.packages("devtools")
-  devtools::install_github("jeanlucj/BreedSimCost", 
+  devtools::install_github("jeanlucj/BreedSimCost",
                            ref="master", build_vignettes=buildVignettes)
 }
+
+for (n in names(obl)) assign(n, obl[[n]], envir=.GlobalEnv)
+for (n in names(frb)) assign(n, frb[[n]], envir=.GlobalEnv)
+for (n in names(rwb)) assign(n, rwb[[n]], envir=.GlobalEnv)
+for (n in names(cte)) assign(n, cte[[n]], envir=.GlobalEnv)

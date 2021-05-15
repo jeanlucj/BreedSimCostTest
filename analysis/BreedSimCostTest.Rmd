@@ -124,5 +124,12 @@ if (FALSE){
 ```{r Cost optimization}
 bsd <- burnedInBSD
 optimizationResults <- optimizeByLOESS(bsd)
+bestAlloc <- which.max(optimizationResults$results$response)
+bsd <- burnedInBSD
+percentages <- optimizationResults$results %>% 
+  slice(bestAlloc) %>% 
+  dplyr::select(contains("perc"))
+runWithBudget(percentages, bsd)
+plot(gv(bsd$varietyCandidates))
 ```
 
