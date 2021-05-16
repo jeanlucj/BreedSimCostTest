@@ -19,10 +19,10 @@ nCores
 # each percentage vector should be nStages + 1
 # The first value is for the population improvement cycle
 minPercentage
-0.20 0.30 0.10 0.10
+0.10 0.20 0.05 0.05
 
 maxPercentage
-0.60 0.70 0.30 0.30
+0.70 0.80 0.45 0.45
 
 percentageStep
 0.20 0.20 0.20 0.20
@@ -34,7 +34,7 @@ minNBreedingProg
 # How small should the confidence interval
 # on budgets be before you stop
 tolerance
-0.10
+0.08
 
 # When running batches of simulations, how many sims per batch?
 batchSize
@@ -46,8 +46,8 @@ maxNumBatches
 
 # When redoing simulations, how many should be high gain?
 nHighGain
-12
+18
 
 #When redoing simulations, how many should be high uncertainty?
 nUncertain
-6
+12

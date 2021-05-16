@@ -8,7 +8,7 @@ TRUE
 # Species characteristics
 # Number of chromosomes
 nChr
-4
+7
 
 # Population characteristics
 
@@ -22,7 +22,7 @@ segSites
 
 # Number of QTL per chromosome
 nQTL
-50
+100
 
 # Number of observed SNP per chromosome
 nSNP
@@ -44,6 +44,6 @@ gxyxlVar
 meanDD
 0.0
 varDD
-0.001
+0.01
 relAA
 0.5
