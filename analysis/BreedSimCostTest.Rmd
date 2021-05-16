@@ -21,7 +21,7 @@ for (package in packages_used){
 packages_devel <- c("BreedSimCost")
 for (package in packages_devel){
   if (!(package %in% ip[,"Package"])){
-    devtools::install_github(paste0("jeanlucj/", package), ref="master",
+    devtools::install_github(paste0("jeanlucj/", package), ref="main",
                              build_vignettes=F)
   }
 }
@@ -128,13 +128,16 @@ saveRDS(optimizationResults, here::here("data", "_optRes.rds"))
 ```{r Plot results, results='hold'}
 bestAlloc <- which.max(optimizationResults$results$response)
 bsd <- burnedInBSD
+burnInInd <- AlphaSimR::nInd(bsd$varietyCandidates)
 percentages <- optimizationResults$results %>% 
   dplyr::slice(bestAlloc) %>% 
   dplyr::select(contains("perc"))
 print("Budget allocations with highest gain")
 print(percentages)
 bsd <- runWithBudget(percentages, bsd, returnBSD=T)
+rangeGV <- range(AlphaSimR::gv(bsd$varietyCandidates))
 plot(AlphaSimR::gv(bsd$varietyCandidates))
-plotLoessPred(resultMat=optimizationResults$results)
+lines(c(burnInInd, burnInInd), rangeGV, lwd=3, col="red")
+plp <- plotLoessPred(resultMat=optimizationResults$results)
 ```
 
