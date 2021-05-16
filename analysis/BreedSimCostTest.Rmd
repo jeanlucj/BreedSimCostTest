@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ### Load packages
-```{r load packages, message=TRUE}
+```{r load packages, message=FALSE}
 ip <- installed.packages()
 packages_used <- c("AlphaSimR", "tidyverse", 
                    "workflowr", "here", "devtools")
@@ -31,7 +31,6 @@ here::i_am("analysis/BreedSimCostTest.Rmd")
 
 random_seed <- 45678
 set.seed(random_seed)
-
 ```
 
 ### Illustrate using the functions in SimpleBreedSim
@@ -120,15 +119,22 @@ burnedInBSD <- bsd
 
 ### The main interface for optimizing budgets
 
-```{r Cost optimization}
+```{r Cost optimization, message=FALSE}
 bsd <- burnedInBSD
 optimizationResults <- optimizeByLOESS(bsd)
+saveRDS(optimizationResults, here::here("data", "_optRes.rds"))
+```
+
+```{r Plot results, results='hold'}
 bestAlloc <- which.max(optimizationResults$results$response)
 bsd <- burnedInBSD
 percentages <- optimizationResults$results %>% 
   dplyr::slice(bestAlloc) %>% 
   dplyr::select(contains("perc"))
+print("Budget allocations with highest gain")
+print(percentages)
 bsd <- runWithBudget(percentages, bsd, returnBSD=T)
 plot(AlphaSimR::gv(bsd$varietyCandidates))
+plotLoessPred(resultMat=optimizationResults$results)
 ```
 
