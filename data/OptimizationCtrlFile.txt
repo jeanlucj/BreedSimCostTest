@@ -1,7 +1,7 @@
 # Implementation details for optimization
 # Get rid of parallel processing if debugging
 debug
-FALSE
+TRUE
 
 # Print stuff as the optimization goes along
 verbose
@@ -34,7 +34,7 @@ minNBreedingProg
 # How small should the confidence interval
 # on budgets be before you stop
 tolerance
-0.08
+0.20
 
 # When running batches of simulations, how many sims per batch?
 batchSize
@@ -42,7 +42,7 @@ batchSize
 
 # How many batches should you do before you quit
 maxNumBatches
-20
+5
 
 # When redoing simulations, how many should be high gain?
 nHighGain
