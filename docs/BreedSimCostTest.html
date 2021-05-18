@@ -417,7 +417,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-05-15
+<strong>Last updated:</strong> 2021-05-17
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -508,27 +508,33 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjeanlucjBreedSimCostTesttree552529f8a426b0b1d4229d78acabd890f4a6fd38targetblank552529fa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jeanlucj/BreedSimCostTest/tree/552529f8a426b0b1d4229d78acabd890f4a6fd38" target="_blank">552529f</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjeanlucjBreedSimCostTesttreef4d65192dcdad2bf8f1624676f5873794f2b2b42targetblankf4d6519a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jeanlucj/BreedSimCostTest/tree/f4d65192dcdad2bf8f1624676f5873794f2b2b42" target="_blank">f4d6519</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomjeanlucjBreedSimCostTesttree552529f8a426b0b1d4229d78acabd890f4a6fd38targetblank552529fa" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomjeanlucjBreedSimCostTesttreef4d65192dcdad2bf8f1624676f5873794f2b2b42targetblankf4d6519a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/jeanlucj/BreedSimCostTest/tree/552529f8a426b0b1d4229d78acabd890f4a6fd38" target="_blank">552529f</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/jeanlucj/BreedSimCostTest/tree/f4d65192dcdad2bf8f1624676f5873794f2b2b42" target="_blank">f4d6519</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
 </p>
 <pre><code>
 Ignored files:
+    Ignored:    .DS_Store
     Ignored:    .Rproj.user/
+    Ignored:    analysis/.DS_Store
     Ignored:    data/.DS_Store
     Ignored:    data/_optRes.rds
     Ignored:    data/allBatches.rds
     Ignored:    data/allPercentRanges.rds
+    Ignored:    data/chooseTrialEntries.rds
+    Ignored:    data/optimizeByLOESS.rds
+    Ignored:    data/runBatch.rds
+    Ignored:    data/runWithBudget.rds
 
 </code></pre>
 <p>
@@ -567,6 +573,57 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jeanlucj/BreedSimCostTest/blob/f4d65192dcdad2bf8f1624676f5873794f2b2b42/analysis/BreedSimCostTest.Rmd" target="_blank">f4d6519</a>
+</td>
+<td>
+jeanlucj
+</td>
+<td>
+2021-05-17
+</td>
+<td>
+wflow_publish(“analysis/BreedSimCostTest.Rmd”)
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jeanlucj/BreedSimCostTest/blob/0ef5d576996054cc46b6fe2de97de47a154e1e3b/analysis/BreedSimCostTest.Rmd" target="_blank">0ef5d57</a>
+</td>
+<td>
+jeanlucj
+</td>
+<td>
+2021-05-17
+</td>
+<td>
+Somewhat nicer Rmarkdown
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jeanlucj/BreedSimCostTest/f3e9a898f8b246924a26f8a88461f408f4870f21/docs/BreedSimCostTest.html" target="_blank">f3e9a89</a>
+</td>
+<td>
+jeanlucj
+</td>
+<td>
+2021-05-15
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -699,14 +756,25 @@ here::i_am(&quot;analysis/BreedSimCostTest.Rmd&quot;)
 random_seed &lt;- 45678
 set.seed(random_seed)</code></pre>
 </div>
-<div id="illustrate-using-the-functions-in-simplebreedsim" class="section level3">
-<h3>Illustrate using the functions in SimpleBreedSim</h3>
+<div id="illustrate-using-the-functions-in-breedsimcost" class="section level3">
+<h3>Illustrate using the functions in BreedSimCost</h3>
+<div id="initialize-the-breeding-program-and-optimization" class="section level4">
+<h4>Initialize the breeding program and optimization</h4>
+<p>Initializing the optimization relies on four text files.<br />
+1. File with parameters that control the population history and genetic architecture of <a href="%22../data/FounderCtrlFile.txt%22">founders</a><br />
+2. File with parameters that control the <a href="%22../data/SchemeCtrlFile.txt%22">breeding scheme</a><br />
+3. File with parameters that control the <a href="%22../data/CostsCtrlFile.txt%22">costs</a> of different breeding resources<br />
+4. File with parameters that control how <a href="%22../data/OptimizationCtrlFile.txt%22">optimization</a> is achieved</p>
 <pre class="r"><code>bsd &lt;- initializeProgram(
          here::here(&quot;data&quot;, &quot;FounderCtrlFile.txt&quot;),
          here::here(&quot;data&quot;, &quot;SchemeCtrlFile.txt&quot;),
          here::here(&quot;data&quot;, &quot;CostsCtrlFile.txt&quot;), 
          here::here(&quot;data&quot;, &quot;OptimizationCtrlFile.txt&quot;)
                          )</code></pre>
+</div>
+<div id="fill-the-variety-development-pipeline" class="section level4">
+<h4>Fill the variety development pipeline</h4>
+<p>Initially, the VDP is empty. Here are commands that simulate a number of years of phenotypic selection that might precede the initiation of a two-part strategy</p>
 <pre class="r"><code># Year 1
 bsd$year &lt;- bsd$year+1
 bsd &lt;- makeVarietyCandidates(bsd)
@@ -784,6 +852,11 @@ jeanlucj
 </div>
 </div>
 <pre class="r"><code>burnedInBSD &lt;- bsd</code></pre>
+</div>
+<div id="code-to-simulate-one-realization-of-the-breeding-scheme" class="section level4">
+<h4>Code to simulate one realization of the breeding scheme</h4>
+<p>This code is not evaluated in the Rmarkdown but is shown here to illustrate how you would write this function so that it embodies different schemes<br />
+The scheme you want to run has to be scripted into the function <code>runWithBudget</code></p>
 <pre class="r"><code># This is code from the package that you can run
 # In the package, it&#39;s in the function runWithBudget
   startValues &lt;- calcCurrentStatus(bsd)
@@ -811,23 +884,18 @@ jeanlucj
   print(startValues)
   print(endValues)</code></pre>
 </div>
-<div id="the-main-interface-for-optimizing-budgets" class="section level3">
-<h3>The main interface for optimizing budgets</h3>
+<div id="the-main-interface-for-optimizing-budgets" class="section level4">
+<h4>The main interface for optimizing budgets</h4>
+<p><code>optimizeByLOESS</code> is the function that does all of the optimization tasks.</p>
 <pre class="r"><code>bsd &lt;- burnedInBSD
 optimizationResults &lt;- optimizeByLOESS(bsd)
 saveRDS(optimizationResults, here::here(&quot;data&quot;, &quot;_optRes.rds&quot;))</code></pre>
-<pre class="r"><code>bestAlloc &lt;- which.max(optimizationResults$results$response)
-bsd &lt;- burnedInBSD
-burnInInd &lt;- AlphaSimR::nInd(bsd$varietyCandidates)
-percentages &lt;- optimizationResults$results %&gt;% 
-  dplyr::slice(bestAlloc) %&gt;% 
-  dplyr::select(contains(&quot;perc&quot;))
-print(&quot;Budget allocations with highest gain&quot;)
-print(percentages)
-bsd &lt;- runWithBudget(percentages, bsd, returnBSD=T)
-rangeGV &lt;- range(AlphaSimR::gv(bsd$varietyCandidates))
-plot(AlphaSimR::gv(bsd$varietyCandidates))
-lines(c(burnInInd, burnInInd), rangeGV, lwd=3, col=&quot;red&quot;)</code></pre>
+</div>
+<div id="plotting-function" class="section level4">
+<h4>Plotting function</h4>
+<p><code>plotLoessPred</code> makes the hexbin plot showing responses at different budgets. The red circle shows the budget found to be optimal.<br />
+Also plotted is one iteration of the budget found to be optimal.</p>
+<pre class="r"><code>plp &lt;- plotLoessPred(resultMat=optimizationResults$results)</code></pre>
 <p><img src="figure/BreedSimCostTest.Rmd/Plot%20results-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Plot-results-1">
@@ -853,6 +921,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/jeanlucj/BreedSimCostTest/blob/f3e9a898f8b246924a26f8a88461f408f4870f21/docs/figure/BreedSimCostTest.Rmd/Plot results-1.png" target="_blank">f3e9a89</a>
+</td>
+<td>
+jeanlucj
+</td>
+<td>
+2021-05-15
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/jeanlucj/BreedSimCostTest/blob/f7b857bc1e2448e63da93ce5cb2077d163b7915e/docs/figure/BreedSimCostTest.Rmd/Plot results-1.png" target="_blank">f7b857b</a>
 </td>
 <td>
@@ -866,7 +945,14 @@ jeanlucj
 </table>
 </div>
 </div>
-<pre class="r"><code>plp &lt;- plotLoessPred(resultMat=optimizationResults$results)</code></pre>
+<pre class="r"><code>bestPerc &lt;- plp$percMean
+cat(&quot; Budget allocations with highest gain\n&quot;, round(unlist(bestPerc), 3), &quot;\n&quot;)
+bsd &lt;- burnedInBSD
+burnInInd &lt;- AlphaSimR::nInd(bsd$varietyCandidates)
+bsd &lt;- runWithBudget(bestPerc, bsd, returnBSD=T)
+rangeGV &lt;- range(AlphaSimR::gv(bsd$varietyCandidates))
+plot(AlphaSimR::gv(bsd$varietyCandidates))
+lines(c(burnInInd, burnInInd), rangeGV, lwd=3, col=&quot;red&quot;)</code></pre>
 <p><img src="figure/BreedSimCostTest.Rmd/Plot%20results-2.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-Plot-results-2">
@@ -892,6 +978,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/jeanlucj/BreedSimCostTest/blob/f3e9a898f8b246924a26f8a88461f408f4870f21/docs/figure/BreedSimCostTest.Rmd/Plot results-2.png" target="_blank">f3e9a89</a>
+</td>
+<td>
+jeanlucj
+</td>
+<td>
+2021-05-15
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/jeanlucj/BreedSimCostTest/blob/f7b857bc1e2448e63da93ce5cb2077d163b7915e/docs/figure/BreedSimCostTest.Rmd/Plot results-2.png" target="_blank">f7b857b</a>
 </td>
 <td>
@@ -905,11 +1002,8 @@ jeanlucj
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;Budget allocations with highest gain&quot;
-# A tibble: 1 x 4
-  percPIC percSDN percCET percPYT
-    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
-1   0.545   0.273  0.0909  0.0909</code></pre>
+<pre><code> Budget allocations with highest gain
+ 0.7 0.2 0.05 0.05 </code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -935,38 +1029,38 @@ attached base packages:
 
 other attached packages:
  [1] BreedSimCost_0.1.0 optiSel_2.0.5      hexbin_1.28.1      sommer_4.1.3      
- [5] crayon_1.4.1       lattice_0.20-41    MASS_7.3-53.1      lme4_1.1-26       
+ [5] crayon_1.4.1       lattice_0.20-41    MASS_7.3-53.1      lme4_1.1-27       
  [9] Matrix_1.3-2       here_1.0.1         tidyr_1.1.3        dplyr_1.0.6       
-[13] AlphaSimR_0.13.0   R6_2.5.0           workflowr_1.6.2   
+[13] AlphaSimR_1.0.1    R6_2.5.0           workflowr_1.6.2   
 
 loaded via a namespace (and not attached):
  [1] magic_1.5-9             foreach_1.5.1           jsonlite_1.7.2         
  [4] splines_4.0.5           ECOSolveR_0.5.4         cccp_0.2-7             
- [7] shiny_1.6.0             assertthat_0.2.1        statmod_1.4.36         
-[10] highr_0.9               yaml_2.2.1              numDeriv_2016.8-1.1    
-[13] pillar_1.6.0            quadprog_1.5-8          glue_1.4.2             
-[16] alabama_2015.3-1        optiSolve_0.1.2         digest_0.6.27          
-[19] manipulateWidget_0.10.1 promises_1.2.0.1        minqa_1.2.4            
-[22] htmltools_0.5.1.1       httpuv_1.6.1            plyr_1.8.6             
-[25] pkgconfig_2.0.3         purrr_0.3.4             xtable_1.8-4           
-[28] webshot_0.5.2           whisker_0.4             later_1.2.0            
-[31] git2r_0.27.1            shapes_1.2.6            tibble_3.1.1           
-[34] generics_0.1.0          pedigree_1.4            ellipsis_0.3.2         
-[37] cli_2.5.0               magrittr_2.0.1          mime_0.10              
-[40] memoise_1.1.0           evaluate_0.14           kinship2_1.8.5         
-[43] fs_1.5.0                fansi_0.4.2             doParallel_1.0.16      
-[46] nlme_3.1-152            tools_4.0.5             data.table_1.14.0      
-[49] HaploSim_1.8.4          minpack.lm_1.2-1        lifecycle_1.0.0        
-[52] pspline_1.0-18          stringr_1.4.0           compiler_4.0.5         
-[55] pkgdown_1.6.1           rlang_0.4.11            nloptr_1.2.2.2         
-[58] rstudioapi_0.11         iterators_1.0.13        htmlwidgets_1.5.3      
-[61] crosstalk_1.1.1         miniUI_0.1.1.1          rmarkdown_2.6          
-[64] boot_1.3-27             nadiv_2.17.1            codetools_0.2-18       
-[67] abind_1.4-5             DBI_1.1.0               reshape2_1.4.4         
-[70] knitr_1.33              fastmap_1.1.0           utf8_1.2.1             
-[73] rprojroot_2.0.2         stringi_1.6.1           Rcpp_1.0.6             
-[76] vctrs_0.3.8             rgl_0.106.8             scatterplot3d_0.3-41   
-[79] tidyselect_1.1.1        xfun_0.22              </code></pre>
+ [7] shiny_1.6.0             assertthat_0.2.1        highr_0.9              
+[10] yaml_2.2.1              numDeriv_2016.8-1.1     pillar_1.6.1           
+[13] quadprog_1.5-8          glue_1.4.2              alabama_2015.3-1       
+[16] optiSolve_0.1.2         digest_0.6.27           manipulateWidget_0.10.1
+[19] promises_1.2.0.1        minqa_1.2.4             htmltools_0.5.1.1      
+[22] httpuv_1.6.1            plyr_1.8.6              pkgconfig_2.0.3        
+[25] purrr_0.3.4             xtable_1.8-4            webshot_0.5.2          
+[28] whisker_0.4             later_1.2.0             git2r_0.27.1           
+[31] shapes_1.2.6            tibble_3.1.2            generics_0.1.0         
+[34] pedigree_1.4            ellipsis_0.3.2          magrittr_2.0.1         
+[37] mime_0.10               memoise_1.1.0           evaluate_0.14          
+[40] kinship2_1.8.5          fs_1.5.0                fansi_0.4.2            
+[43] doParallel_1.0.16       nlme_3.1-152            tools_4.0.5            
+[46] data.table_1.14.0       HaploSim_1.8.4          minpack.lm_1.2-1       
+[49] lifecycle_1.0.0         pspline_1.0-18          stringr_1.4.0          
+[52] compiler_4.0.5          pkgdown_1.6.1           rlang_0.4.11           
+[55] nloptr_1.2.2.2          iterators_1.0.13        htmlwidgets_1.5.3      
+[58] crosstalk_1.1.1         miniUI_0.1.1.1          rmarkdown_2.6          
+[61] boot_1.3-27             nadiv_2.17.1            codetools_0.2-18       
+[64] abind_1.4-5             DBI_1.1.0               reshape2_1.4.4         
+[67] knitr_1.33              fastmap_1.1.0           utf8_1.2.1             
+[70] rprojroot_2.0.2         stringi_1.6.2           Rcpp_1.0.6             
+[73] vctrs_0.3.8             rgl_0.106.8             scatterplot3d_0.3-41   
+[76] tidyselect_1.1.1        xfun_0.22              </code></pre>
+</div>
 </div>
 </div>
 
