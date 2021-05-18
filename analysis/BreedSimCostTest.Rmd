@@ -38,10 +38,13 @@ set.seed(random_seed)
 #### Initialize the breeding program and optimization  
 Initializing the optimization relies on four text files.  
 1. File with parameters that control the population history and genetic 
-architecture of founders  
-2. File with parameters that control the breeding scheme  
-3. File with parameters that control the costs of different breeding resources  
-4. File with parameters that control how optimization is achieved  
+architecture of [founders]("../data/FounderCtrlFile.txt")  
+2. File with parameters that control the 
+[breeding scheme]("../data/SchemeCtrlFile.txt")  
+3. File with parameters that control the [costs]("../data/CostsCtrlFile.txt") 
+of different breeding resources  
+4. File with parameters that control how 
+[optimization]("../data/OptimizationCtrlFile.txt") is achieved  
 ```{r Initialize program}
 bsd <- initializeProgram(
          here::here("data", "FounderCtrlFile.txt"),
@@ -98,7 +101,7 @@ burnedInBSD <- bsd
 ```
 
 #### Code to simulate one realization of the breeding scheme  
-This code is not evaluated in the Rmarkdown but is shown here to illustrate
+This code is not evaluated in the Rmarkdown but is shown here to illustrate 
 how you would write this function so that it embodies different schemes  
 The scheme you want to run has to be scripted into the function `runWithBudget`  
 ```{r runWithBudget, eval=FALSE}
@@ -141,7 +144,7 @@ saveRDS(optimizationResults, here::here("data", "_optRes.rds"))
 #### Plotting function
 `plotLoessPred` makes the hexbin plot showing responses at different budgets. 
 The red circle shows the budget found to be optimal.  
-Also plotted is one iteration of the budget found to be optimal  
+Also plotted is one iteration of the budget found to be optimal.  
 ```{r Plot results, results='hold'}
 plp <- plotLoessPred(resultMat=optimizationResults$results)
 bestPerc <- plp$percMean
