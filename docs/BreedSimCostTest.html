@@ -761,10 +761,10 @@ set.seed(random_seed)</code></pre>
 <div id="initialize-the-breeding-program-and-optimization" class="section level4">
 <h4>Initialize the breeding program and optimization</h4>
 <p>Initializing the optimization relies on four text files.<br />
-1. File with parameters that control the population history and genetic architecture of <a href="%22../data/FounderCtrlFile.txt%22">founders</a><br />
-2. File with parameters that control the <a href="%22../data/SchemeCtrlFile.txt%22">breeding scheme</a><br />
-3. File with parameters that control the <a href="%22../data/CostsCtrlFile.txt%22">costs</a> of different breeding resources<br />
-4. File with parameters that control how <a href="%22../data/OptimizationCtrlFile.txt%22">optimization</a> is achieved</p>
+1. File with parameters that control the population history and genetic architecture of <a href="../data/FounderCtrlFile.txt">founders</a><br />
+2. File with parameters that control the <a href="../data/SchemeCtrlFile.txt">breeding scheme</a><br />
+3. File with parameters that control the <a href="../data/CostsCtrlFile.txt">costs</a> of different breeding resources<br />
+4. File with parameters that control how <a href="../data/OptimizationCtrlFile.txt">optimization</a> is achieved</p>
 <pre class="r"><code>bsd &lt;- initializeProgram(
          here::here(&quot;data&quot;, &quot;FounderCtrlFile.txt&quot;),
          here::here(&quot;data&quot;, &quot;SchemeCtrlFile.txt&quot;),
