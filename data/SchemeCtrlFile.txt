@@ -6,7 +6,7 @@ nCyclesToRun
 # How many burn-in cycles of phenotypic selection before
 # starting the two-part genomic selection?
 nBurnInCycles
-6
+7
 
 # The number of stages simulated and retained in the records
 nStages

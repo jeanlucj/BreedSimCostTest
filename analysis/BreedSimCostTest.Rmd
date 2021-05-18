@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-### Load packages
+### Load packages  
 ```{r load packages, message=FALSE}
 ip <- installed.packages()
 packages_used <- c("AlphaSimR", "tidyverse", 
@@ -33,8 +33,15 @@ random_seed <- 45678
 set.seed(random_seed)
 ```
 
-### Illustrate using the functions in SimpleBreedSim
+### Illustrate using the functions in BreedSimCost  
 
+#### Initialize the breeding program and optimization  
+Initializing the optimization relies on four text files.  
+1. File with parameters that control the population history and genetic 
+architecture of founders  
+2. File with parameters that control the breeding scheme  
+3. File with parameters that control the costs of different breeding resources  
+4. File with parameters that control how optimization is achieved  
 ```{r Initialize program}
 bsd <- initializeProgram(
          here::here("data", "FounderCtrlFile.txt"),
@@ -44,7 +51,9 @@ bsd <- initializeProgram(
                          )
 ```
 
-
+#### Fill the variety development pipeline  
+Initially, the VDP is empty.  Here are commands that simulate a number of years
+of phenotypic selection that might precede the initiation of a two-part strategy  
 ```{r Fill variety development pipeline}
 # Year 1
 bsd$year <- bsd$year+1
@@ -88,6 +97,10 @@ plot(AlphaSimR::gv(bsd$varietyCandidates))
 burnedInBSD <- bsd
 ```
 
+#### Code to simulate one realization of the breeding scheme  
+This code is not evaluated in the Rmarkdown but is shown here to illustrate
+how you would write this function so that it embodies different schemes  
+The scheme you want to run has to be scripted into the function `runWithBudget`  
 ```{r runWithBudget, eval=FALSE}
 # This is code from the package that you can run
 # In the package, it's in the function runWithBudget
@@ -117,27 +130,27 @@ burnedInBSD <- bsd
   print(endValues)
 ```
 
-### The main interface for optimizing budgets
-
+#### The main interface for optimizing budgets
+`optimizeByLOESS` is the function that does all of the optimization tasks.  
 ```{r Cost optimization, message=FALSE}
 bsd <- burnedInBSD
 optimizationResults <- optimizeByLOESS(bsd)
 saveRDS(optimizationResults, here::here("data", "_optRes.rds"))
 ```
 
+#### Plotting function
+`plotLoessPred` makes the hexbin plot showing responses at different budgets. 
+The red circle shows the budget found to be optimal.  
+Also plotted is one iteration of the budget found to be optimal  
 ```{r Plot results, results='hold'}
-bestAlloc <- which.max(optimizationResults$results$response)
+plp <- plotLoessPred(resultMat=optimizationResults$results)
+bestPerc <- plp$percMean
+cat(" Budget allocations with highest gain\n", round(unlist(bestPerc), 3), "\n")
 bsd <- burnedInBSD
 burnInInd <- AlphaSimR::nInd(bsd$varietyCandidates)
-percentages <- optimizationResults$results %>% 
-  dplyr::slice(bestAlloc) %>% 
-  dplyr::select(contains("perc"))
-print("Budget allocations with highest gain")
-print(percentages)
-bsd <- runWithBudget(percentages, bsd, returnBSD=T)
+bsd <- runWithBudget(bestPerc, bsd, returnBSD=T)
 rangeGV <- range(AlphaSimR::gv(bsd$varietyCandidates))
 plot(AlphaSimR::gv(bsd$varietyCandidates))
 lines(c(burnInInd, burnInInd), rangeGV, lwd=3, col="red")
-plp <- plotLoessPred(resultMat=optimizationResults$results)
 ```
 

@@ -1,7 +1,7 @@
 # Implementation details for optimization
 # Get rid of parallel processing if debugging
 debug
-TRUE
+FALSE
 
 # Print stuff as the optimization goes along
 verbose
@@ -13,7 +13,7 @@ TRUE
 
 # Number of cores for parallel processing
 nCores
-4
+6
 
 # parameters for initial grid search
 # each percentage vector should be nStages + 1
@@ -34,20 +34,20 @@ minNBreedingProg
 # How small should the confidence interval
 # on budgets be before you stop
 tolerance
-0.20
+0.08
 
 # When running batches of simulations, how many sims per batch?
 batchSize
-36
+72
 
 # How many batches should you do before you quit
 maxNumBatches
-5
+10
 
 # When redoing simulations, how many should be high gain?
 nHighGain
-18
+50
 
 #When redoing simulations, how many should be high uncertainty?
 nUncertain
-12
+10

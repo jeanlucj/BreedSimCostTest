@@ -16,7 +16,9 @@ if (local){
                            ref="master", build_vignettes=buildVignettes)
 }
 
+for (n in names(fff)) assign(n, fff[[n]], envir=.GlobalEnv)
 for (n in names(obl)) assign(n, obl[[n]], envir=.GlobalEnv)
 for (n in names(frb)) assign(n, frb[[n]], envir=.GlobalEnv)
 for (n in names(rwb)) assign(n, rwb[[n]], envir=.GlobalEnv)
+for (n in names(rb)) assign(n, rb[[n]], envir=.GlobalEnv)
 for (n in names(cte)) assign(n, cte[[n]], envir=.GlobalEnv)
