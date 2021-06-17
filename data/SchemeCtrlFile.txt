@@ -1,12 +1,12 @@
 # Variety Development Pipeline
 # The number of cycles to run the scheme
 nCyclesToRun
-5
+4
 
 # How many burn-in cycles of phenotypic selection before
 # starting the two-part genomic selection?
 nBurnInCycles
-7
+4
 
 # The number of stages simulated and retained in the records
 nStages

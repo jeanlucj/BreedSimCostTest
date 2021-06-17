@@ -1,7 +1,7 @@
 # Implementation details for optimization
 # Get rid of parallel processing if debugging
 debug
-FALSE
+TRUE
 
 # Print stuff as the optimization goes along
 verbose
@@ -31,10 +31,16 @@ percentageStep
 minNBreedingProg
 2
 
+# Number of variety candidates in the last stage
+# that will go to the marketing department. Also the
+# minimum number of entries in the last stage
+nToMarketingDept
+4
+
 # How small should the confidence interval
 # on budgets be before you stop
 tolerance
-0.08
+0.40
 
 # When running batches of simulations, how many sims per batch?
 batchSize
