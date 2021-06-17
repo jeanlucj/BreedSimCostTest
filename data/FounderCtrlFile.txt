@@ -11,7 +11,6 @@ nChr
 7
 
 # Population characteristics
-
 # Effective size of population generating the founders
 effPopSize
 100
@@ -41,6 +40,10 @@ gxyxlVar
 5
 
 # Mean and variance of dominance degree
+# See AlphaSimR documentation. meanDD=0 means additive
+# model. meanDD > 0 means heterozygotes are more similar
+# to the high parent
+# relAA controls how much AxA epistasis there is
 meanDD
 0.0
 varDD
