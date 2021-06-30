@@ -16,6 +16,7 @@ if (local){
                            ref="master", build_vignettes=buildVignettes)
 }
 
+# If you have a list put all its contents in .GlobalEnv
 for (n in names(bts)) assign(n, bts[[n]], envir=.GlobalEnv)
 for (n in names(fff)) assign(n, fff[[n]], envir=.GlobalEnv)
 for (n in names(obl)) assign(n, obl[[n]], envir=.GlobalEnv)
@@ -23,3 +24,8 @@ for (n in names(frb)) assign(n, frb[[n]], envir=.GlobalEnv)
 for (n in names(rwb)) assign(n, rwb[[n]], envir=.GlobalEnv)
 for (n in names(rb)) assign(n, rb[[n]], envir=.GlobalEnv)
 for (n in names(cte)) assign(n, cte[[n]], envir=.GlobalEnv)
+
+# Make an R script out of the .Rmd
+knitr::purl("~/Documents/GitRepo/BreedSimCostTest/analysis/BreedSimCostTest.Rmd",
+            output="~/Documents/GitRepo/BreedSimCostTest/analysis/RunBreedSimCost.R",
+            documentation=1)

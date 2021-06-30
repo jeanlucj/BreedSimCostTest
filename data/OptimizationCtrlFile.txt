@@ -1,7 +1,7 @@
 # Implementation details for optimization
 # Get rid of parallel processing if debugging
 debug
-TRUE
+FALSE
 
 # Print stuff as the optimization goes along
 verbose
@@ -51,18 +51,18 @@ nToMarketingDept
 # the difference between min and max budgets must be
 # below the tolerance
 tolerance
-0.40
+0.05
 
 # Optimization runs a batch of simulations, analyzes
 # them to estimate and optimum, then, if tolerance not
 # met, runs another batch: How many sims per batch?
 batchSize
-72
+144
 
 # How many batches should you do before you give up
 # to prevent an optimization from running forever
 maxNumBatches
-10
+20
 
 # In preparing the next batch of simulations, the
 # optimization will redo some number that had high
@@ -70,8 +70,8 @@ maxNumBatches
 # was high.
 # For the next batch how many sims should be high gain?
 nHighGain
-50
+72
 
 # For the next batch how many should be high uncertainty?
 nUncertain
-10
+16

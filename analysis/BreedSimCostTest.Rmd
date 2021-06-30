@@ -30,7 +30,7 @@ library(BreedSimCost)
 
 here::i_am("analysis/BreedSimCostTest.Rmd")
 
-random_seed <- 45678
+random_seed <- 56789
 set.seed(random_seed)
 ```
 

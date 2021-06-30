@@ -10,7 +10,7 @@ TRUE
 # The two types that are supported (18June21) are
 # clonal and inbred
 varietyType
-inbred
+clonal
 
 # Number of chromosomes
 nChr
