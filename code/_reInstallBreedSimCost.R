@@ -13,7 +13,7 @@ if (local){
 } else{
   # install.packages("devtools")
   devtools::install_github("jeanlucj/BreedSimCost",
-                           ref="master", build_vignettes=buildVignettes)
+                           ref="main", build_vignettes=buildVignettes)
 }
 
 # If you have a list put all its contents in .GlobalEnv
