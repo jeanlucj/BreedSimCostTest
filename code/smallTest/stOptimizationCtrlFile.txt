@@ -1,7 +1,7 @@
 # Implementation details for optimization
 # Get rid of parallel processing if debugging
 debug
-TRUE
+FALSE
 
 # Print stuff as the optimization goes along
 verbose
@@ -11,11 +11,11 @@ FALSE
 # Assuming a workflowR directory structure, results will
 # be saved in the data folder
 saveIntermediateResults
-TRUE
+FALSE
 
 # Number of cores for parallel processing
 nCores
-6
+1
 
 # parameters for initial grid search
 # each percentage vector should be nStages + 1

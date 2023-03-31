@@ -9,11 +9,12 @@ buildVignettes <- FALSE
 if (local){
   setwd("~/Documents/GitRepo/BreedSimCost")
   devtools::document()
-  devtools::install_local(getwd(), build_vignettes=buildVignettes)
+  devtools::install_local(getwd(),
+                          build_vignettes=buildVignettes)
 } else{
   # install.packages("devtools")
-  devtools::install_github("jeanlucj/BreedSimCost",
-                           ref="main", build_vignettes=buildVignettes)
+  devtools::install_github("jeanlucj/BreedSimCost", ref="main",
+                           build_vignettes=buildVignettes)
 }
 
 # If you have a list put all its contents in .GlobalEnv
